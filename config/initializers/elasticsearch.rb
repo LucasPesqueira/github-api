@@ -10,7 +10,7 @@ if File.exists?("config/elasticsearch.yml")
 end
 
 if Rails.env == 'development'
-  Elasticsearch::Model.client = Elasticsearch::Client.new(config)
+  Searchkick.client = Elasticsearch::Client.new(config)
 else
   Searchkick.client = Elasticsearch::Client.new url: ENV['BONSAI_URL']
 end
