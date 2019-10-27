@@ -12,5 +12,5 @@ end
 if Rails.env == 'development'
   Elasticsearch::Model.client = Elasticsearch::Client.new(config)
 else
-  Elasticsearch::Model.client = Elasticsearch::Client.new url: ENV['BONSAI_URL']
+  Searchkick.client = Elasticsearch::Client.new url: ENV['BONSAI_URL']
 end
