@@ -17,6 +17,7 @@ group :development, :test do
   gem 'pry', '~> 0.12.2'
   gem 'dotenv-rails', '~> 2.7.5'
   gem 'annotate', '~> 3.0.2'
+  gem 'shoulda-matchers', '~> 4.1.2'
 end
 
 group :development do

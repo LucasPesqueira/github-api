@@ -82,5 +82,16 @@
 require 'rails_helper'
 
 RSpec.describe Repository, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'relations' do
+    it { is_expected.to belong_to(:owner) }
+  end
+
+  describe 'validations' do
+    it { is_expected.to validate_presence_of(:external_id) }
+
+    it 'is expected to validate uniqueness of #external_id' do
+      Repository.create(external_id: 1)
+      expect(Repository.create(external_id: 1).save).to eq(false)
+    end
+  end
 end

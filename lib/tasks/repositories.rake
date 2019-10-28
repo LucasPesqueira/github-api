@@ -9,15 +9,7 @@ namespace :repositories do
       @response = RestClient.get @url.to_s
 
       JSON.parse(@response.body)['items'].each do |repository|
-        repository_params = repository
-        repository_params['external_id'] = repository_params.delete 'id'
-        repository_params['owner_params'] = repository_params.delete 'owner'
-
-        @repository = Owner.find_by(external_id: repository_params['external_id'])
-
-        unless @repository.try(:persisted?)
-          @repository = Repository.create(repository_params)
-        end
+        CreateRepositoryService.new(repository).call
         print '.'
       end
     end

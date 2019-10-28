@@ -80,36 +80,17 @@
 #
 
 class Repository < ApplicationRecord
-  searchkick
-
-  attr_accessor :owner_params
+  searchkick word_start: [:name]
 
   validates :external_id, presence: true
   validates :external_id, uniqueness: true
 
   belongs_to :owner
 
-  before_validation :create_or_associate_owner
-
-  private
-
-  def create_or_associate_owner
-    self.owner_params = formatted_owner_params
-
-    @owner = Owner.find_by(external_id: self.owner_params['external_id'])
-
-    if @owner.try(:persisted?)
-      self.owner = @owner
-    else
-      @owner = Owner.create(self.owner_params)
-      self.owner = @owner
-    end
-  end
-
-  def formatted_owner_params
-    params = self.owner_params
-    params['external_id'] = params.delete 'id'
-    params['external_type'] = params.delete 'type'
-    params
+  # method to add informations to ES index and return on the query
+  def search_data
+    attributes.merge(
+      "owner" => self.owner
+    )
   end
 end
