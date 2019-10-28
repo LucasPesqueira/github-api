@@ -1,24 +1,56 @@
-# README
+### Goal
+This project was created for a job application at Delivery center
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+# Github-G
+#### What it does?
+The project was intended to use the github api to get the most starred repositories on the platform, save them to a database and provide a endpoint to get the top 5. The endpoint has the option to pass a param language to get repositories only from that language.
 
-* Ruby version
 
-* System dependencies
+#### API endpoints
 
-* Configuration
+###https://github-r.herokuapp.com
 
-* Database creation
+#####this endpoint returns repositories
 
-* Database initialization
+**params:**
 
-* How to run the test suite
+    name: string
+    language: string
+    order: (asc | desc) - default (desc)
+    limit: integer - default (5)
 
-* Services (job queues, cache servers, search engines, etc.)
+###https://github-r.herokuapp.com/repositories
 
-* Deployment instructions
+#####this endpoint returns repositories
 
-* ...
+**params:**
+
+    name: string
+    language: string
+    order: (asc | desc) - default (desc)
+    limit: integer - default (5)
+
+###https://github-r.herokuapp.com/repositories/:id
+
+#####this endpoint returns repository specified by id
+
+**params:**
+
+    id: integer
+
+###https://github-r.herokuapp.com/owners
+
+#####this endpoint returns all the owners
+
+###https://github-r.herokuapp.com/owners/:id
+
+#####this endpoint returns repository specified by id
+
+**params:**
+
+    id: integer
+
+### Postman collection
+
+####https://drive.google.com/open?id=1tNoIu8nZ9iaSAWR4cpn4Q_PuBXfgSNhI
