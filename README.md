@@ -9,20 +9,9 @@ The project was intended to use the github api to get the most starred repositor
 
 #### API endpoints
 
-###https://github-r.herokuapp.com
+### https://github-r.herokuapp.com
 
-#####this endpoint returns repositories
-
-**params:**
-
-    name: string
-    language: string
-    order: (asc | desc) - default (desc)
-    limit: integer - default (5)
-
-###https://github-r.herokuapp.com/repositories
-
-#####this endpoint returns repositories
+##### This endpoint returns repositories
 
 **params:**
 
@@ -31,21 +20,32 @@ The project was intended to use the github api to get the most starred repositor
     order: (asc | desc) - default (desc)
     limit: integer - default (5)
 
-###https://github-r.herokuapp.com/repositories/:id
+### https://github-r.herokuapp.com/repositories
 
-#####this endpoint returns repository specified by id
+##### This endpoint returns repositories
+
+**params:**
+
+    name: string
+    language: string
+    order: (asc | desc) - default (desc)
+    limit: integer - default (5)
+
+### https://github-r.herokuapp.com/repositories/:id
+
+##### This endpoint returns repository specified by id
 
 **params:**
 
     id: integer
 
-###https://github-r.herokuapp.com/owners
+### https://github-r.herokuapp.com/owners
 
-#####this endpoint returns all the owners
+##### This endpoint returns all the owners
 
-###https://github-r.herokuapp.com/owners/:id
+### https://github-r.herokuapp.com/owners/:id
 
-#####this endpoint returns repository specified by id
+##### This endpoint returns repository specified by id
 
 **params:**
 
@@ -53,4 +53,4 @@ The project was intended to use the github api to get the most starred repositor
 
 ### Postman collection
 
-####https://drive.google.com/open?id=1tNoIu8nZ9iaSAWR4cpn4Q_PuBXfgSNhI
+#### https://drive.google.com/open?id=1tNoIu8nZ9iaSAWR4cpn4Q_PuBXfgSNhI
