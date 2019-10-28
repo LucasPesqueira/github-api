@@ -10,6 +10,8 @@ The project was intended to use the github api to get the most starred repositor
 - order: to order the results based on the stars quantity
 - limit: to set the max records result
 
+The params are all optional, and you can use them all at once if you want to.
+
 
 #### API endpoints
 
