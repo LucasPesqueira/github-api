@@ -11,6 +11,8 @@ gem 'rspec-rails', '~> 3.9.0'
 gem 'searchkick', '~> 4.1.0'
 gem 'rest-client', '~> 2.1.0'
 gem 'elasticsearch-rails', '~> 7.0.0'
+gem 'jsonapi-resources', '0.9.0'
+gem 'jsonapi-utils', '0.7.2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

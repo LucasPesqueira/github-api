@@ -1,10 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe RepositoriesController, type: :controller do
+RSpec.describe OwnersController, type: :controller do
   before(:all) do
-    @owner = Owner.create(external_id: 2)
-    @repository = @owner.repositories.create(external_id: 1, name: 'test', stargazers_count: 3, language: 'test')
-    Repository.reindex
+    @owner = Owner.create(external_id: 1)
+    Owner.reindex
   end
 
   describe '#index' do
@@ -23,7 +22,7 @@ RSpec.describe RepositoriesController, type: :controller do
 
   describe '#show' do
     before do
-      get :show, params: { id: Repository.find_by(external_id: 1).id }
+      get :show, params: { id: Owner.find_by(external_id: 1).id }
     end
 
     it 'returns 200 status' do

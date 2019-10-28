@@ -26,6 +26,8 @@
 #
 
 class Owner < ApplicationRecord
+  searchkick
+
   validates :external_id, presence: true, uniqueness: true
 
   has_many :repositories

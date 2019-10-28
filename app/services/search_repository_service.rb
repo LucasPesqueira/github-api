@@ -5,7 +5,7 @@ class SearchRepositoryService
     @limit = params['limit'].present? ? params['limit'] : '5'
     @language = params['language']
 
-    Repository.search(@name, where: where_params, order: {stargazers_count: @order}, load: false).results.first(@limit.to_i)
+    Repository.search(@name, where: where_params, order: { stargazers_count: @order }).results.first(@limit.to_i)
   end
 
   private
