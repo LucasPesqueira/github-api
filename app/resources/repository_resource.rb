@@ -1,5 +1,5 @@
 class RepositoryResource < JSONAPI::Resource
-  attributes :id, :external_id, :node_id, :name, :full_name, :private, :html_url, :description, :fork,
+  attributes :external_id, :node_id, :name, :full_name, :private, :html_url, :description, :fork,
              :url, :forks_url, :keys_url, :collaborators_url, :teams_url, :hooks_url, :issue_events_url,
              :events_url, :assignees_url, :branches_url, :tags_url, :blobs_url, :git_tags_url, :git_refs_url,
              :trees_url, :statuses_url, :languages_url, :stargazers_url, :contributors_url, :subscribers_url,
