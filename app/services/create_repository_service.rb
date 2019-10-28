@@ -8,7 +8,14 @@ class CreateRepositoryService
     @owner = Owner.find_by(external_id: @owner_params['external_id'])
 
     @owner = Owner.create(@owner_params) unless @owner.try(:persisted?)
-    @owner.repositories.create(@repository_params) unless Owner.find_by(external_id: @repository_params['external_id']).try(:persisted?)
+
+    @repository = Repository.find_by(external_id: @repository_params['external_id'])
+
+    if @repository.try(:persisted?)
+      @repository.update(stargazers_count: @repository_params['stargazers_count'].to_i)
+    else
+      @owner.repositories.create(@repository_params)
+    end
   end
 
   private
