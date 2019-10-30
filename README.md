@@ -12,6 +12,15 @@ The project was intended to use the github api to get the most starred repositor
 
 The params are all optional, and you can use them all at once if you want to.
 
+#### Installation steps
+
+- 1 Install 2.6.4 ruby vesion
+- 2 Run bundler / bundle install
+- 3 Install postgresql
+- 4 Install elasticsearch (run service at: localhost port: 9200)
+- 5 Run task of repositories importation (rake repositories:import)
+- 6 Run rails server
+
 
 #### API endpoints
 
