@@ -1,7 +1,3 @@
-### Goal
-This project was created for a job application at Delivery center
-
-
 # Github-G
 #### What it does?
 The project was intended to use the github api to get the most starred repositories on the platform, save them to a database (the applications get new repositories every day) and provide a endpoint to get the top 5. The endpoint has the option to pass the params:
